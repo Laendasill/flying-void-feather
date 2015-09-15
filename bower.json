@@ -1,0 +1,20 @@
+{
+  "name": "flying-void-feather",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Laendasill/flying-void-feather",
+  "authors": [
+    "laendasill <panador@gmail.com>"
+  ],
+  "description": "etnografia game",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
