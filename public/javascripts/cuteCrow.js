@@ -1,9 +1,10 @@
 var cuteCrow = (function(){
-  
+
 
 var game = (function(){
-    var  players   = []
-        ,questions = []
+  'use strict';
+    var  players   = [],
+         questions = []
          ;
     function init(){
 
@@ -13,28 +14,27 @@ var game = (function(){
     function addPlayer(player){
       players.push(player);
     }
-  var module = {
+
+
+
+  return {
     players: players,
     init: init,
     addPlayer: addPlayer
 
   };
 
-
-  return module;
-
 })();
 var cuteCrow = cuteCrow || {};
 cuteCrow.game = game;
 
 var player = (function(){
-    var points = 0  //INT
-        ,name  = "gracz";   //String
+    var points = 0,  //INT
+        name  = "gracz";   //String
 
-    function init() {
 
-    };
-    var module = {
+    
+    return {
       init: init,
 
         // Testing private variables
@@ -42,29 +42,27 @@ var player = (function(){
       points: points,
       name:   name
     };
-
-    return module;
 })();
 
 var cuteCrow = cuteCrow || {};
 cuteCrow.player = player;
 
 var question = (function(){
-  var question
-      ,ansers = []
-      ,correct = 0
-      ,//idk what to do
+  var question,
+      ansers = [],
+      correct = 0;
+      //idk what to do
   function fromJson(js){
 
   }
-  var module = {
+
+
+  return {
 
     question: "",
     ansers: [],
     correct: 0
   };
-
-  return module;
 })();
 
 var cuteCrow = cuteCrow || {};
@@ -78,7 +76,7 @@ var questionLoader = (function(){
         xmlHttp.send( null );
         return xmlHttp.responseText;
   }
-  function getQuestions(url){
+  function publicgetQuestions(url){
     return [
       {
         "id": 0,
@@ -119,22 +117,19 @@ var questionLoader = (function(){
     ];
   }
 
-  var module {
-    getQuestions: getQuestions
-  };
-return module;
-});
+
+return {
+  getQuestions: publicgetQuestions
+};
+})();
 
 //Abstract class
 var _gameAction = (function(){
   function next(){
-    
+
   }
-  var module = {
 
-  };
-
-  return module;
+  return ;
 });
 
 
