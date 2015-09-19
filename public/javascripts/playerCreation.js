@@ -43,4 +43,7 @@ document.onload = function(){
   })();
 
   playerCreation.button.addEventListener("click",playerCreation.addPlayer,false);
+  // testing
+  document.querySelector(".current-players").InnerHTML = playerCreation.pending_players;
+  //testing
 };
