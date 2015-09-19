@@ -1,4 +1,4 @@
-document.onload = function(){
+window.onload = function(){
   var playerCreation = (function(){
       var name_field = document.getElementById("player_name")
           ,ok_button = document.getElementById("add_player")
@@ -11,7 +11,7 @@ document.onload = function(){
           ,assignId
           ;
       getPlayerInfo = function(){
-        return name_field.InnerHTML;
+        return name_field.value;
 
       };
       getPendingPlayers = function(){
@@ -25,6 +25,7 @@ document.onload = function(){
           name: getPlayerInfo(),
           id: assignId()
         });
+
       };
       createPlayers = function(){
         created_players = [];
@@ -42,8 +43,10 @@ document.onload = function(){
       };
   })();
 
-  playerCreation.button.addEventListener("click",playerCreation.addPlayer,false);
+  playerCreation.button.addEventListener("click",function(ev){
+    playerCreation.addPlayer()
+    
+    },false);
   // testing
-  document.querySelector(".current-players").InnerHTML = playerCreation.pending_players;
   //testing
 };
