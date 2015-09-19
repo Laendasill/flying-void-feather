@@ -10,16 +10,17 @@ var setup  = require('./routes/setup');
 
 var app = express();
 var helmet = require('helmet');
+var csp = require("helmet-csp");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-//app.use(helmet.csp({
-//  defaultSrc: ["'self'", 'localhost:3000'],
-//  scriptSrc: ["'self'",   'localhost:3000/javascripts']
-//}));
+app.use(csp({
+  defaultSrc: ["'self'"],
+  scriptSrc: ["'self'"/*,'localhost:3000/javascripts/'*/]
+}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

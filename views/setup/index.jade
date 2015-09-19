@@ -1,6 +1,13 @@
 extends ../layout
-
+script(src="javascripts/playerCreation.js" type='text/javascript')
 block content
-  .add-players Dodaj graczy
-  .current-players obecni gracze
-  .start-game zacznij grę
+  .add-players
+    .row
+      .four.columns
+        label(for="player_name") imię gracza:
+        input( type="text" id="player_name") 
+        button(id="add_player") Dodaj
+      .four.columns
+        .current-players obecni gracze:
+      .four.columns
+        .start-game zacznij grę
