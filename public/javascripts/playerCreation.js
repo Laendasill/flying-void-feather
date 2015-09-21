@@ -16,7 +16,7 @@
         ok_button = ok;
       };
       getPlayerInfo = function(){
-        return name_field.InnerHTML;
+        return name_field.value;
 
       };
       getPendingPlayers = function(){
@@ -30,6 +30,7 @@
           name: getPlayerInfo(),
           id: assignId()
         });
+
       };
       createPlayers = function(){
         created_players = [];
@@ -47,7 +48,8 @@
         pending_players: getPendingPlayers
       };
   })();
-document.onload = function(){
+
+window.onload = function(){
   var
     name_field = document.getElementById("player_name")
     ,ok_button = document.getElementById("add_player");
@@ -57,6 +59,7 @@ document.onload = function(){
       document.querySelector(".current-players").InnerHTML = playerCreation.pending_players();
   },false);
   // testing
+
 
   //testing
 };
