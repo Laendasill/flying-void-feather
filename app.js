@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var setup  = require('./routes/setup');
-
+var game   = require('./routes/game');
 var app = express();
 var helmet = require('helmet');
 var csp = require("helmet-csp");
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'node_modules/etnografia_gra/build/script')));
 app.use('/', routes);
 app.use('/setup', setup);
-
+app.use('/game', game);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

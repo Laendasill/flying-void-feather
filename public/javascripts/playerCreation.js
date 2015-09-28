@@ -12,7 +12,7 @@
           ,assignId
           ;
       init = function(namef,ok){
-        name_field = name_f;
+        name_field = namef;
         ok_button = ok;
       };
       getPlayerInfo = function(){
@@ -54,12 +54,12 @@ window.onload = function(){
     name_field = document.getElementById("player_name")
     ,ok_button = document.getElementById("add_player");
     playerCreation.init(name_field,ok_button);
-  playerCreation.button.addEventListener("click",function(){
+  ok_button.addEventListener("click",function(){
     playerCreation.addPlayer();
-      document.querySelector(".current-players").InnerHTML = playerCreation.pending_players();
+      document.querySelector(".current-players").innerHTML += JSON.stringify(playerCreation.pending_players(),null,2);
   },false);
-  // testing
-
-
-  //testing
+  document.getElementById("start-game").addEventListener("click",function(){
+    playerCreation.createPlayers();
+      window.location.replace("/game");
+  });
 };
